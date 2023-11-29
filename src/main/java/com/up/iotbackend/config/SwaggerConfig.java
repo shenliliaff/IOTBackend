@@ -7,6 +7,7 @@ import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
+import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.oas.annotations.EnableOpenApi;
@@ -16,8 +17,8 @@ import springfox.documentation.oas.annotations.EnableOpenApi;
 public class SwaggerConfig {
 
     @Bean
-    public Docket defaultApi2() {
-        return new Docket(DocumentationType.OAS_30)
+    public Docket defaultApi3() {
+        return new Docket(DocumentationType.OAS_30).pathMapping("/")
                 .enable(true)
                 // 用来创建该API的基本信息，展示在文档的页面中（自定义展示的信息）
                 .apiInfo(apiInfo())
@@ -39,9 +40,12 @@ public class SwaggerConfig {
                 // 设置标题
                 .title("API接口文档")
                 // 描述
-                .description("描述:相关接口信息")
+                .description("描述:up iot interfaces")
                 // 版本
                 .version("版本号:" + "1.0")
+                .contact(new Contact("up", "https://upcloudtech.cn", "uptech_iot@163.com"))
+                .licenseUrl("https://upcloudtech.cn")
+                .termsOfServiceUrl("https://upcloudtech.cn")
                 .build();
     }
 }

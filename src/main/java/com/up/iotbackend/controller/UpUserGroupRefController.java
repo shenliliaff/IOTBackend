@@ -1,6 +1,7 @@
 package com.up.iotbackend.controller;
 
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.stereotype.Controller;
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Controller;
  * @since 2022-12-18
  */
 @Controller
+@CrossOrigin
 @RequestMapping("/up-user-group-ref")
 public class UpUserGroupRefController {
 

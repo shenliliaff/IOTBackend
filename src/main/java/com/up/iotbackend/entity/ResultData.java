@@ -63,16 +63,20 @@ public class ResultData<T> implements Serializable {
         return new ResultData( code, message, null);
     }
 
+    public static ResultData error() {
+        return ResultData.bind(ResultEnum.FAILURE);
+    }
+
     public static ResultData bind(ResultEnum resultEnum){
         String language = "en";
 
-        if (StpUtil.isLogin()){
-            language = StpUtil.getSession().getString("language");
-            if (language.contains("zh")){
-                language = "zh";
-            }
-        }
-
+//        if (StpUtil.isLogin()){
+//            language = StpUtil.getSession().getString("language");
+//            if (language.contains("zh")){
+//                language = "zh";
+//            }
+//        }
+//
         MessageSource messageSource = SpringUtil.getBean(MessageSource.class);
         String message = messageSource.getMessage(resultEnum.getMessage(), null, new Locale(language));
         return new ResultData(resultEnum.getCode(),message,null);

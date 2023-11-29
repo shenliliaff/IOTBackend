@@ -26,7 +26,7 @@ public class UpDeviceLogInfo implements Serializable {
     private Integer id;
 
     @ApiModelProperty("设备sn")
-    private Integer deviceSn;
+        private String deviceSn;
 
     @ApiModelProperty("设备记录描述")
     private String deviceLogDescription;
@@ -56,11 +56,11 @@ public class UpDeviceLogInfo implements Serializable {
     public void setId(Integer id) {
         this.id = id;
     }
-    public Integer getDeviceSn() {
+    public String getDeviceSn() {
         return deviceSn;
     }
 
-    public void setDeviceSn(Integer deviceSn) {
+    public void setDeviceSn(String deviceSn) {
         this.deviceSn = deviceSn;
     }
     public String getDeviceLogDescription() {

@@ -18,16 +18,17 @@ import java.util.Map;
  * @author Feng.An
  * @since 2022-12-18
  */
-public interface UpVenueInfoMapper extends BaseMapper<UpVenueInfo> {
+public interface
+UpVenueInfoMapper extends BaseMapper<UpVenueInfo> {
     @Select("select * from up_venue_info v where v.is_in_use = 1")
     @Results({
             @Result(property = "id", column = "id"),
             @Result(property = "venueName", column = "venue_name")
     })
-    List<UpVenueInfo> getAllVenues();
+    List<Map<String,Object>> getAllVenues();
 
-    @Select("SELECT v.id,l.location_name,d.device_sn,d.device_name FROM up_venue_info v " +
+    @Select("SELECT v.id,l.id as location_id,l.location_name,d.device_sn,d.device_name FROM up_venue_info v " +
             "left join up_location_info l on v.id = l.venue_id left join up_device_info d on l.id = d.location_id " +
-            "where v.is_in_use = 1 and l.is_in_use = 1 and d.is_in_use = 1 and v.id = #{venue_id}")
-    List<Map<String,Object>> getVenueLocationDevicesById(Integer venue_id);
+            "where v.is_in_use = 1 and l.is_in_use = 1 and d.is_in_use = 1 and v.id = #{venueId}")
+    List<Map<String,Object>> getVenueLocationDevicesById(Integer venueId);
 }

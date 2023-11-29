@@ -1,5 +1,6 @@
 package com.up.iotbackend.service.impl;
 
+import cn.dev33.satoken.stp.StpUtil;
 import com.up.iotbackend.entity.ResultData;
 import com.up.iotbackend.entity.UpVenueInfo;
 import com.up.iotbackend.mapper.UpVenueInfoMapper;
@@ -28,11 +29,13 @@ public class UpVenueInfoServiceImpl extends ServiceImpl<UpVenueInfoMapper, UpVen
 
     @Override
     public List<Map<String,Object>> getVenueLocationDevicesById(Integer venueId) {
+        
         return upVenueInfoMapper.getVenueLocationDevicesById(venueId);
     }
 
     @Override
-    public List<UpVenueInfo> getAllVenues() {
+    public List<Map<String,Object>> getAllVenues() {
+        
         return upVenueInfoMapper.getAllVenues();
     }
 }

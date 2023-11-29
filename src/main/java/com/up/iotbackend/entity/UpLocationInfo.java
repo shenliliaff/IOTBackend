@@ -5,8 +5,11 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.Map;
+
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import org.jetbrains.annotations.Contract;
 
 /**
  * <p>
@@ -21,6 +24,13 @@ import io.swagger.annotations.ApiModelProperty;
 public class UpLocationInfo implements Serializable {
 
     private static final long serialVersionUID = 1L;
+    public UpLocationInfo(){}
+
+    public UpLocationInfo(Integer id,String locationName,String remark){
+        this.id=id;
+        this.locationName=locationName;
+        this.remark=remark;
+    }
 
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
@@ -29,7 +39,7 @@ public class UpLocationInfo implements Serializable {
     private String locationName;
 
     @ApiModelProperty("场馆id")
-    private String venueId;
+    private Integer venueId;
 
     @ApiModelProperty("是否有效")
     private Integer isInUse;
@@ -63,11 +73,11 @@ public class UpLocationInfo implements Serializable {
     public void setLocationName(String locationName) {
         this.locationName = locationName;
     }
-    public String getVenueId() {
+    public Integer getVenueId() {
         return venueId;
     }
 
-    public void setVenueId(String venueId) {
+    public void setVenueId(Integer venueId) {
         this.venueId = venueId;
     }
     public Integer getIsInUse() {

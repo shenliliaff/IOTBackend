@@ -11,6 +11,10 @@ public enum ResultEnum {
     FAILURE(400,"failure"),
     PARAMS(401,"parameter_incorrect"),
     MESSAGE_NOT(404,"message_not_exist"),
+    INSERT_FAILURE(405,"insert_failure"),
+    UPDATE_FAILURE(406,"update_failure"),
+    DELETE_FAILURE(407,"delete_failure"),
+    CREATE_FAILURE(408,"create_failure"),
     ;
     private Integer code;
     private String message;

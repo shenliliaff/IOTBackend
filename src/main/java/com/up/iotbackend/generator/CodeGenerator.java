@@ -42,7 +42,7 @@ public class CodeGenerator {
                     // 设置需要生成的表名
                     builder.addInclude("up_user","up_group","up_role","up_permission","up_user_group_ref","up_user_role_ref",
                             "up_role_permission_ref","up_group_role_ref","up_device_info","up_device_log_info","up_device_key_info",
-                            "up_location_info","up_venue_info","up_device_type_info");
+                            "up_location_info","up_venue_info","up_device_type_info","up_device_admin_ref");
                 })
 //                .templateConfig(builder -> {
 //                    builder.disable(TemplateType.ENTITY)

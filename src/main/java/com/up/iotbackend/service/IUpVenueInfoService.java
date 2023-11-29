@@ -18,5 +18,5 @@ import java.util.Map;
 public interface IUpVenueInfoService extends IService<UpVenueInfo> {
     List<Map<String,Object>> getVenueLocationDevicesById(Integer venueId);
 
-    List<UpVenueInfo> getAllVenues();
+    List<Map<String,Object>> getAllVenues();
 }
