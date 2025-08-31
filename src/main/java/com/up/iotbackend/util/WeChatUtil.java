@@ -43,7 +43,7 @@ public class WeChatUtil {
         //发送post请求读取调用微信接口获取openid用户唯一标识
         String result = HttpUtil.post(requestUrl, requestUrlParam);
         JSONObject jsonObject = JSONUtil.parseObj(result);
-        System.out.println(code);
+        //System.out.println(code);
         return jsonObject;
     }
 

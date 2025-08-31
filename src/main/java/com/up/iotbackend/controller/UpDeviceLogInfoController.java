@@ -85,7 +85,7 @@ public class UpDeviceLogInfoController {
                 return ResultData.success(feedbackList);
             }catch (Exception e)
             {
-                System.out.println(e);
+                //System.out.println(e);
                 return ResultData.bind(ResultEnum.FAILURE);
             }
         }

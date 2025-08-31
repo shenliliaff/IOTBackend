@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.up</groupId>
     <artifactId>IOTBackend</artifactId>
-    <version>0.1.1-SNAPSHOT</version>
+    <version>0.1.3-SNAPSHOT</version>
     <name>IOTBackend</name>
     <description>IOTBackend</description>
     <properties>

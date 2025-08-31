@@ -68,7 +68,7 @@ public class UpLocationInfoController {
                             LocalDateTime refreshTime=  (LocalDateTime)allDevices.get(i).get("update_time");
                             Date updateTime = Date.from(refreshTime.atZone(ZoneId.systemDefault()).toInstant());
                             Long seconds=DateUtil.betweenMs(new Date(date.getTime()),updateTime);
-                            System.out.println(seconds);
+                            //System.out.println(seconds);
                             if(seconds > 600000){
                                 allDevices.get(i).put("isConnect","离线");
                             }else{
@@ -83,7 +83,7 @@ public class UpLocationInfoController {
                         return ResultData.success(allDevices);
                     }catch (Exception e)
                     {
-                        System.out.println(e);
+                        //System.out.println(e);
                         return ResultData.bind(ResultEnum.FAILURE);
                     }
                 }
@@ -101,7 +101,7 @@ public class UpLocationInfoController {
                         LocalDateTime refreshTime=  (LocalDateTime)allDevicesByLocation.get(i).get("update_time");
                         Date updateTime = Date.from(refreshTime.atZone(ZoneId.systemDefault()).toInstant());
                         Long seconds=DateUtil.betweenMs(new Date(date.getTime()),updateTime);
-                        System.out.println(seconds);
+                        //System.out.println(seconds);
                         if(seconds > 600000){
                             allDevicesByLocation.get(i).put("isConnect","离线");
                         }else{
@@ -116,7 +116,7 @@ public class UpLocationInfoController {
                     return ResultData.success(allDevicesByLocation);
                 }catch (Exception e)
                 {
-                    System.out.println(e);
+                    //System.out.println(e);
                     return ResultData.bind(ResultEnum.FAILURE);
                 }
             }

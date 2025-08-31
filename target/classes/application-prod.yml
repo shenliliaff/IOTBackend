@@ -1,0 +1,16 @@
+server:
+  port: 8091
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/up_prod?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&nullCatalogMeansCurrent=true
+    username: root
+    password: Uptech2022!!!!
+  redis:
+    database: 0
+    host: localhost
+    port: 6379
+    password:
+savePath:
+  profilePhotoPath: /home/up/backend/resource/img/  #server图标存储路径
+  profilePhotoMapper: /upload/img/ #图标的映射路径

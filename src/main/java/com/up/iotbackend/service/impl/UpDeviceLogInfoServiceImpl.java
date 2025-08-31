@@ -51,7 +51,7 @@ public class UpDeviceLogInfoServiceImpl extends ServiceImpl<UpDeviceLogInfoMappe
             upDeviceLogInfoMapper.insertDeviceLogInfo(deviceSn,log,creator);
             return ResultData.success();
         }catch (Exception e){
-            System.out.println(e);
+            //System.out.println(e);
             return ResultData.bind(ResultEnum.INSERT_FAILURE);
         }
     }
@@ -63,7 +63,7 @@ public class UpDeviceLogInfoServiceImpl extends ServiceImpl<UpDeviceLogInfoMappe
             upDeviceLogInfoMapper.updateQueryCmd(deviceKeyId,"心跳自动更新-"+DoorMagnetic,updateTime);
             return ResultData.success();
         }catch (Exception e){
-            System.out.println(e);
+            //System.out.println(e);
             return ResultData.bind(ResultEnum.UPDATE_FAILURE);
         }
     }

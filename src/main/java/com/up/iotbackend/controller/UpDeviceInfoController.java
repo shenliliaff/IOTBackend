@@ -142,7 +142,7 @@ public class UpDeviceInfoController {
                 return ResultData.success(deviceDetailInfo);
             }catch (Exception e)
             {
-                System.out.println(e);
+                //System.out.println(e);
                 return ResultData.bind(ResultEnum.FAILURE);
             }
         }

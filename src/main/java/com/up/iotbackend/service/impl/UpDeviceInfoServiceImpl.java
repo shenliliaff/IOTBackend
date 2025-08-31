@@ -51,7 +51,7 @@ public class UpDeviceInfoServiceImpl extends ServiceImpl<UpDeviceInfoMapper, UpD
             upDeviceInfoMapper.updateDeviceNameInfo(device_sn, deviceName, updateTime);
             return ResultData.success();
         } catch (Exception e) {
-            System.out.println(e);
+            //System.out.println(e);
             return ResultData.bind(ResultEnum.UPDATE_FAILURE);
         }
     }
@@ -62,7 +62,7 @@ public class UpDeviceInfoServiceImpl extends ServiceImpl<UpDeviceInfoMapper, UpD
             upDeviceInfoMapper.updateDeviceLocationInfo(device_sn, Integer.parseInt(LocationId), updateTime);
             return ResultData.success();
         } catch (Exception e) {
-            System.out.println(e);
+            //System.out.println(e);
             return ResultData.bind(ResultEnum.UPDATE_FAILURE);
         }
     }
@@ -77,7 +77,7 @@ public class UpDeviceInfoServiceImpl extends ServiceImpl<UpDeviceInfoMapper, UpD
                 return ResultData.success();
             }
         } catch (Exception e) {
-            System.out.println(e);
+            //System.out.println(e);
             return ResultData.bind(ResultEnum.UPDATE_FAILURE);
         }
     }

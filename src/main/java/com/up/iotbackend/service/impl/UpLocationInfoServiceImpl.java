@@ -115,7 +115,7 @@ public class UpLocationInfoServiceImpl extends ServiceImpl<UpLocationInfoMapper,
             upLocationInfoMapper.updateLocationInfo(locationId, locationName, modifier, updateTime,remark);
             return ResultData.success();
         } catch (Exception e) {
-            System.out.println(e);
+            //System.out.println(e);
             return ResultData.bind(ResultEnum.UPDATE_FAILURE);
         }
     }
