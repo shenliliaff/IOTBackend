@@ -21,6 +21,7 @@ public interface IUpDeviceInfoService extends IService<UpDeviceInfo> {
     List<Map<String, Object>> getDevicesByLocation(Integer location_id);
     List<Map<String,Object>> getDeviceDetailById(String device_sn,Integer pageNum);
     List<Map<String,Object>> getDeviceById(String device_sn);
+    Map<String,Object> getDeviceVenueInfoById(String device_sn);
     ResultData updateDeviceNameInfo(String device_sn, String deviceName, DateTime updateTime);
     ResultData updateDeviceLocationInfo(String device_sn, String LocationId, DateTime updateTime);
     ResultData updateDeviceRemoteOperation(String deviceSn, String remoteOperation, DateTime updateTime,String modifier);

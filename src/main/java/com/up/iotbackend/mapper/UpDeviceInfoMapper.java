@@ -36,6 +36,12 @@ public interface UpDeviceInfoMapper extends BaseMapper<UpDeviceInfo> {
             ")device group by device.update_time")
     List<Map<String,Object>> getDeviceDetailById(String deviceSn,Integer pageNum);
 
+    @Select("SELECT d.device_sn,l.location_name,l.venue_id,v.venue_name FROM up_device_info d " +
+            "left join up_location_info l on d.location_id = l.id " +
+            "left join up_venue_info v on v.id = l.venue_id " +
+            "where d.is_in_use = 1 and l.is_in_use = 1 and v.is_in_use = 1 and d.device_sn=#{deviceSn}")
+    Map<String,Object> getDeviceVenueInfoById(String deviceSn);
+
     @Update("update up_device_info set device_name=#{deviceName},update_time=#{updateTime} where is_in_use = 1 and device_sn=#{deviceSn}")
     void updateDeviceNameInfo(String deviceSn, String deviceName, DateTime updateTime);
 

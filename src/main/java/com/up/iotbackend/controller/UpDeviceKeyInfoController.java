@@ -133,8 +133,15 @@ public class UpDeviceKeyInfoController {
             //解析CodeVal拿到校验信息 一个字符串就行 requestType-deviceKeyId-user 例如 1-af-up
             //124-56-102c2a883daf52210c3cd83ded0ac189-chaoXingXiangShan
             if(codeVal[0].equals("allPass")){
-                upDeviceLogInfoService.insertDeviceLogInfo(iotRequestBody.get("SN").toString(), "万能码开门成功", "admin");
-                return "{\"Status\": 1, \"StatusDesc\": \"allow Pass\", \"Relay1Time\": 3000,\"BeepType\": 1,\"BeepTime\": 300}";
+                //2025.9.1 万能码是allPass-up 这个字段,象山不想要万能码，getDeviceVenueInfoById
+                Map<String, Object> deviceVenueInfo = upDeviceInfoService.getDeviceVenueInfoById(iotRequestBody.get("SN").toString());
+                if(deviceVenueInfo.get("venue_id").toString().equals("1")){
+                    upDeviceLogInfoService.insertDeviceLogInfo(iotRequestBody.get("SN").toString(), "万能码开门失败，象山不允许使用万能码","admin");
+                    return "{\"Status\": 0, \"StatusDesc\": \"No Entry\", \"Relay1Time\": 3000,\"BeepType\": 1,\"BeepTime\": 300}";
+                }else {
+                    upDeviceLogInfoService.insertDeviceLogInfo(iotRequestBody.get("SN").toString(), "万能码开门成功", "admin");
+                    return "{\"Status\": 1, \"StatusDesc\": \"allow Pass\", \"Relay1Time\": 3000,\"BeepType\": 1,\"BeepTime\": 300}";
+                }
             }else {
                 if (codeType.equals("Q") && iotRequestBody.get("CodeVal").toString().contains("-") && codeVal.length > 2) {
                     //up请求自己校验

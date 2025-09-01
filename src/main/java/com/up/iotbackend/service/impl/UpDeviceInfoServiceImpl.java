@@ -41,6 +41,11 @@ public class UpDeviceInfoServiceImpl extends ServiceImpl<UpDeviceInfoMapper, UpD
     }
 
     @Override
+    public Map<String, Object> getDeviceVenueInfoById(String device_sn) {
+        return upDeviceInfoMapper.getDeviceVenueInfoById(device_sn);
+    }
+
+    @Override
     public List<Map<String, Object>> getDeviceById(String device_sn) {
         return upDeviceInfoMapper.getDevice(device_sn);
     }

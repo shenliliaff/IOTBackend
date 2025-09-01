@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active:  dev,token
+    active:  prod,token
   servlet:
     multipart:
       enabled: true
